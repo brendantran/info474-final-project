@@ -1,4 +1,5 @@
 ﻿grade,asian,black,hispanic,white
+None,141.00,83.00,397.00,530.00
 1st - 4th grade,120.00,112.00,1047.00,1119.00
 5th - 6th grade,167.00,229.00,2317.00,2414.00
 7th - 8th grade,216.00,373.00,1313.00,2384.00
@@ -6,9 +7,9 @@
 10th grade,199.00,598.00,1007.00,2669.00
 11th grade2,398.00,1890.00,2726.00,6963.00
 High school graduate,2664.00,10762.00,13279.00,54211.00
-"Some college, no degree",1771.00,6528.00,7041.00,33891.00
-"Associate's degree, occupational",361.00,1260.00,1448.00,8640.00
-"Associate's degree, academic",652.00,1769.00,2115.00,11958.00
+Some college,1771.00,6528.00,7041.00,33891.00
+"A.A. degree, occupational",361.00,1260.00,1448.00,8640.00
+"A.A. degree, academic",652.00,1769.00,2115.00,11958.00
 Bachelor's degree,5276.00,5344.00,5514.00,43760.00
 Master's degree,2803.00,2177.00,1766.00,18450.00
 Professional degree,367.00,283.00,269.00,2663.00
