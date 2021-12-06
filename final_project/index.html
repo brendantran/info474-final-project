@@ -22,32 +22,31 @@
 
 
 <body>
-    <p> Description of meaningful viz Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-        Maecenas porttitor congue massa. Fusce posuere, magna sed 
-        pulvinar ultricies, purus lectus malesuada libero, sit amet
-         commodo magna eros quis urna.</p>
+    <p> The following data comes from the United States Census Bureau. They have compiled 
+        multiple datasets depicting the educational attainment of those 18 years and older in the United States. 
+    Learn about the disparities of educational attainment compared between race and ethnicity, as well as gender, below.</p>
     <div class="float-container">
         <div id="allraces" style="text-align:center;">
-        </div>
-        <div class="form" >
-            <div class="form-check" oninput="drawAll()" onchange="drawAll()" style="text-align:left;">
-                <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonTotal" value="All"
-                    checked>
-                <label class="form-check-label" for="radioButtonTotal">
-                    All
-                </label>
-            </div>
-            <div class="form-check" oninput="drawMale()" onchange="drawMale()" style="text-align:left;">
-                <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonMale" value="Male">
-                <label class="form-check-label" for="radioButtonMale">
-                    Male
-                </label>
-            </div>
-            <div class="form-check"oninput="drawFemale()" onchange="drawFemale()" style="text-align:left;">
-                <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonFemale" value="Female">
-                <label class="form-check-label" for="radioButtonFemale">
-                    Female
-                </label>
+            <div class="form" >
+                <div class="form-check" onchange="drawAll()" style="text-align:left;">
+                    <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonTotal" value="All"
+                        checked>
+                    <label class="form-check-label" for="radioButtonTotal">
+                        All
+                    </label>
+                </div>
+                <div class="form-check" onchange="drawMale()" style="text-align:left;">
+                    <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonMale" value="Male">
+                    <label class="form-check-label" for="radioButtonMale">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check" onchange="drawFemale()" style="text-align:left;">
+                    <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonFemale" value="Female">
+                    <label class="form-check-label" for="radioButtonFemale">
+                        Female
+                    </label>
+                </div>
             </div>
         </div>
     </div>
