@@ -43,12 +43,7 @@ svg {
   font-family: Raleway, sans-serif;
 }
 
-#row1 {
-    display: flex;
-    justify-content: center;
-}
-
-#row2 {
+#row1, #row2 {
     display: flex;
     justify-content: center;
 }
