@@ -17,6 +17,7 @@ d3.csv("/csv/educational-attainment-all.csv", function (d) {
   // format variables 
   // array of grade levels (strings)
   var grades = d.map(d => d.grade)
+  window.value = grades
   console.log(grades)
 
   // array of numbers of asian graduates (integers)
@@ -106,5 +107,47 @@ d3.csv("/csv/educational-attainment-all.csv", function (d) {
 
 
 // // MINI CHARTS CODE BELOW ---------------------------------------------------
+d3.csv('/csv/educational-attainment-asian.csv', function(dataset) {
+console.log(dataset)
 
+  var margin = { top: 5, right: 15, bottom: 75, left: 50 },
+  width = 450 - margin.left - margin.right,
+  height = 225 - margin.top - margin.bottom;
+  
+  var svg = d3.select(".asian")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+  var grades = window.value
+  var xScale = d3.scalePoint().domain(grades).range([0, width]);
+  var xAxis = d3.axisBottom(xScale).ticks(16)
+  svg.append('g')
+    .attr('transform', 'translate(0, ' + height + ')')
+    .call(xAxis)
+    .selectAll("text")
+    .style("text-anchor", "end")
+    .attr("dx", "-.8em")
+    .attr("dy", ".15em")
+    .attr("transform", "rotate(-40)")
+
+  var yScale = d3.scaleLinear().domain([0, d3.max(dataset, function(d) {
+    return +d.All;
+  })]).range([height, 0])
+  svg.append('g')
+    .call(d3.axisLeft(yScale))
+
+  svg.append('path')
+    .datum(dataset)
+    .attr('fill', 'none')
+    .attr('stroke', 'steelblue')
+    .attr('stroke-width', 1.5)
+    .attr('d', d3.line()
+      .x(function(d) { return d.Coordinates })
+      .y(function(d) { return d.All })
+      )
+})
 
