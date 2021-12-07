@@ -69,11 +69,11 @@ function drawOverall(asianData, blackData, hispanicData, whiteData, margin, widt
 
     //var yScale = d3.scaleLinear().domain([0, d3.max(whiteTotalGraduates)]).range([height, 0])
     var yScale = d3.scaleLinear().domain([0, d3.max(dataset, function (d) {
-      return +d.white;
+      return +d[whiteData];
     })]).range([height, 10])
     svg.append("g")
       .call(d3.axisLeft(yScale))
-
+ 
     // y-axis label
     svg.append('text')
       .text("NUMBER OF GRADUATES")
@@ -84,7 +84,7 @@ function drawOverall(asianData, blackData, hispanicData, whiteData, margin, widt
 
     // add chart title
     svg.append('text')
-      .text("Education Attainment by Race/Ethnicity: " + gender)
+      .text("Educational Attainment by Race/Ethnicity: " + gender)
       .attr("class", "chart-title")
       .attr("x", 150)
       .attr("y", 5)
@@ -145,6 +145,7 @@ function drawOverall(asianData, blackData, hispanicData, whiteData, margin, widt
   })
 }
 drawOverall('asian', 'black', 'hispanic', 'white', margin, width, height, svg, "All")
+
 function drawAll() {
   svg.selectAll("*").remove()
   drawOverall('asian', 'black', 'hispanic', 'white', margin, width, height, svg, "All")
