@@ -17,7 +17,6 @@ function drawOverall(asianData, blackData, hispanicData, whiteData, margin, widt
     // format variables 
     // array of grade levels (strings)
     var grades = dataset.map(dataset => dataset.grade)
-    window.value = grades
     // array of numbers of asian graduates (integers)
 
     var asianTotalGraduateString = dataset.map(dataset => dataset[asianData])
@@ -163,9 +162,10 @@ function drawFemale() {
 
 
 
-function createMiniGraph(csv, race, color) {
+function createMiniGraph(csv, race, color, gender) {
   d3.csv(csv, function (dataset) {
-    //console.log(dataset)
+
+    var grades = dataset.map(dataset => dataset.grade)
 
     var margin = { top: 5, right: 15, bottom: 75, left: 50 },
       width = 450 - margin.left - margin.right,
@@ -179,7 +179,6 @@ function createMiniGraph(csv, race, color) {
       .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-    var grades = window.value
     var xScale = d3.scalePoint().domain(grades).range([0, width]);
     var xAxis = d3.axisBottom(xScale).ticks(16)
     svg.append('g')
@@ -199,17 +198,63 @@ function createMiniGraph(csv, race, color) {
 
     svg.append('path')
       .datum(dataset)
+      .attr('class', race + '-path-' + gender)
       .attr('fill', 'none')
       .attr('stroke', color)
       .attr('stroke-width', 1.5)
       .attr('d', d3.line()
         .x(function (d) { return xScale(d.grade) })
-        .y(function (d) { return yScale(d.All) })
+        .y(function (d) { return yScale(d[gender]) })
       )
   })
 }
 
-createMiniGraph('/csv/educational-attainment-asian.csv', '.asian', '#69b3a2');
-createMiniGraph('/csv/educational-attainment-black.csv', '.black', '#FA6900');
-createMiniGraph('/csv/educational-attainment-white.csv', '.white', '#785Bd7');
-createMiniGraph('/csv/educational-attainment-hispanic.csv', '.hispanic', '#187bcd')
+createMiniGraph('/csv/educational-attainment-asian.csv', '.asian', '#69b3a2', 'All');
+createMiniGraph('/csv/educational-attainment-black.csv', '.black', '#FA6900', 'All');
+createMiniGraph('/csv/educational-attainment-white.csv', '.white', '#785Bd7', 'All');
+createMiniGraph('/csv/educational-attainment-hispanic.csv', '.hispanic', '#187bcd', 'All')
+
+function drawAsianAll() {
+  createMiniGraph('/csv/educational-attainment-asian.csv', '.asian', '#69b3a2', 'All');
+}
+function drawAsianMale() {
+  createMiniGraph('/csv/educational-attainment-asian.csv', '.asian', '#7B9891', 'Male');
+}
+function drawAsianFemale() {
+  createMiniGraph('/csv/educational-attainment-asian.csv', '.asian', '#3D7165', 'Female');
+}
+
+function drawBlackAll() {
+  createMiniGraph('/csv/educational-attainment-black.csv', '.black', '#FA6900', 'All');
+}
+function drawBlackMale() {
+  createMiniGraph('/csv/educational-attainment-black.csv', '.black', '#BFA089', 'Male');
+}
+function drawBlackFemale() {
+  createMiniGraph('/csv/educational-attainment-black.csv', '.black', '#884A1C', 'Female');
+}
+
+function drawWhiteAll() {
+  createMiniGraph('/csv/educational-attainment-white.csv', '.white', '#785Bd7', 'All');
+}
+function drawWhiteMale() {
+  createMiniGraph('/csv/educational-attainment-white.csv', '.white', '#8376AF', 'Male');
+}
+function drawWhiteFemale() {
+  createMiniGraph('/csv/educational-attainment-white.csv', '.white', '#3D2B78', 'Female');
+}
+
+function drawHispanicAll(id) {
+  console.log(id)
+  if (document.getElementById(id).checked) {
+    createMiniGraph('/csv/educational-attainment-hispanic.csv', '.hispanic', '#187bcd', 'All');
+  } else {
+    d3.selectAll('.hispanic-path-All').remove()
+  }
+}
+function drawHispanicMale() {
+  createMiniGraph('/csv/educational-attainment-hispanic.csv', '.hispanic', '#698BA7', 'Male');
+}
+function drawHispanicFemale() {
+  createMiniGraph('/csv/educational-attainment-hispanic.csv', '.hispanic', '#264C6B', 'Female');
+}
