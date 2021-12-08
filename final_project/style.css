@@ -48,13 +48,20 @@ p {
 svg {
     font-family: Raleway, sans-serif;
 }
-.form {
+.form-overall {
   float: right;
   
   padding-top: 150px;
   font-family: Raleway, sans-serif;
   
 }
+.form-minis {
+    float: right;
+    
+    padding-top: 100px;
+    font-family: Raleway, sans-serif;
+    
+  }
 
 #row1, #row2 {
     display: flex;
