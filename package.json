@@ -1,0 +1,23 @@
+{
+  "name": "info474-final-project",
+  "version": "1.0.0",
+  "description": "INFO 474 Final Project by Alex, Brendan, &amp; Maria",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d final_project"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendantran/info474-final-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendantran/info474-final-project/issues"
+  },
+  "homepage": "https://github.com/brendantran/info474-final-project#readme",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
