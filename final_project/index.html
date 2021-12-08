@@ -69,57 +69,58 @@
     <div id="mini-graphs">
         <div id="row1">
             <div id="asianSVG">
-                <svg class="asian" width="450" height="225">
+                <svg class="asian" width="550" height="350">
 
                 </svg>
                 <div class="form" >
-                    <input type="checkbox" id="asianAll" name="asianAll" value="asian">
+                    <input type="checkbox" id="asianAll" name="asianAll" value="asian" checked=true onclick="drawAsianAll(id)">
                     <label for="asianAll">All</label><br>
-                    <input type="checkbox" id="asianMale" name="asianMale" value="asian">
+                    <input type="checkbox" id="asianMale" name="asianMale" value="asian" onclick="drawAsianMale(id)">
                     <label for="asianMale">Male</label><br>
-                    <input type="checkbox" id="asianFemale" name="asianFemale" value="asian">
+                    <input type="checkbox" id="asianFemale" name="asianFemale" value="asian" onclick="drawAsianFemale(id)">
                     <label for="asianFemale">Female</label>
                 </div>
             </div>
             <div id="blackSVG">
-                <svg class="black" width="450" height="225">
+                <svg class="black" width="550" height="350">
                     
                 </svg>
                 <div class="form" >
-                    <input type="checkbox" id="blackAll" name="blackAll" value="black">
+                    <input type="checkbox" id="blackAll" name="blackAll" value="black" checked=true onclick="drawBlackAll(id)">
                     <label for="blackAll">All</label><br>
-                    <input type="checkbox" id="blackMale" name="blackMale" value="black">
+                    <input type="checkbox" id="blackMale" name="blackMale" value="black" onclick="drawBlackMale(id)">
                     <label for="blackMale">Male</label><br>
-                    <input type="checkbox" id="blackFemale" name="blackFemale" value="black">
+                    <input type="checkbox" id="blackFemale" name="blackFemale" value="black" onclick="drawBlackMale(id)">
                     <label for="blackFemale">Female</label>
                 </div>
             </div>
         </div>
         <div id="row2">
             <div id="whiteSVG">
-                <svg class="white" width="450" height="225">
+                <svg class="white" width="550" height="350">
                     
                 </svg>
                 <div class="form" >
-                    <input type="checkbox" id="whiteAll" name="whiteAll" value="white">
+                    <input type="checkbox" id="whiteAll" name="whiteAll" value="white" checked=true onclick="drawWhiteAll(id)">
                     <label for="whiteAll">All</label><br>
-                    <input type="checkbox" id="whiteMale" name="whiteMale" value="white">
+                    <input type="checkbox" id="whiteMale" name="whiteMale" value="white" onclick="drawWhiteMale(id)">
                     <label for="whiteMale">Male</label><br>
-                    <input type="checkbox" id="whiteFemale" name="whiteFemale" value="white">
+                    <input type="checkbox" id="whiteFemale" name="whiteFemale" value="white" onclick="drawWhiteFemale(id)">
                     <label for="whiteFemale">Female</label>
                 </div>
             </div>
             <div id="hispanicSVG">
-                <svg class="hispanic" width="450" height="225">
+                <svg class="hispanic" width="550" height="350">
                     
                 </svg>
                 <div class="form" >
-                    <input type="checkbox" id="hispanicAll" name="hispanicAll" value="hispanic" onclick="drawHispanicAll(id)">
+                    <input type="checkbox" id="hispanicAll" name="hispanicAll" value="hispanic" checked=true onclick="drawHispanicAll(id)">
                     <label for="hispanicAll">All</label><br>
-                    <input type="checkbox" id="hispanicMale" name="hispanicMale" value="hispanic">
+                    <input type="checkbox" id="hispanicMale" name="hispanicMale" value="hispanic" onclick="drawHispanicMale(id)">
                     <label for="hispanicMale">Male</label><br>
-                    <input type="checkbox" id="hispanicFemale" name="hispanicFemale" value="hispanic">
-                    <label for="hispanicFemale">Female</label>                </div>
+                    <input type="checkbox" id="hispanicFemale" name="hispanicFemale" value="hispanic" onclick="drawHispanicFemale(id)">
+                    <label for="hispanicFemale">Female</label>                
+                </div>
             </div>
         </div>
     </div>
