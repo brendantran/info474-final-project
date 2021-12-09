@@ -3,151 +3,181 @@
 <html lang="en">
 
 
-    <head>
-        <meta charset="utf-8">
-        <title>Educational Attainment by Race and Ethnicity</title>
-        <meta name="author" content="Maria Matlick, Alex Ramos, Brendan Tran">
-        <meta name="description" content="Interactive web page visualizing graduation rates">
-        <link rel="icon" type="image/png" href="img/graduate-favicon.png">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-            integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Playfair+Display" />
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-        <link rel="stylesheet" href="./style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Educational Attainment by Race and Ethnicity</title>
+    <meta name="author" content="Maria Matlick, Alex Ramos, Brendan Tran">
+    <meta name="description" content="Interactive web page visualizing graduation rates">
+    <link rel="icon" type="image/png" href="img/graduate-favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Playfair+Display" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
 
-    <h1>Educational Attainment by Race/Ethnicity and Gender</h1>
-    <body>
-        <p>The following data comes from the United States Census Bureau. They have compiled 
-            multiple datasets depicting the educational attainment of those 18 years and older in the United States. 
-        Learn about the disparities of educational attainment compared between race and ethnicity, as well as gender, below. 
-        Note: Notice how the y-axis values change when different genders are selected. </p>
-        <div class="float-container">
-            <div id="allraces" style="text-align:center;">
-                <div class="form-overall" >
-                    <div class="form-check" onchange="drawAll()" style="text-align:left;">
-                        <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonTotal" value="All"
-                            checked>
-                        <label class="form-check-label" for="radioButtonTotal">
-                            All
-                        </label>
-                    </div>
-                    <div class="form-check" onchange="drawMale()" style="text-align:left;">
-                        <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonMale" value="Male">
-                        <label class="form-check-label" for="radioButtonMale">
-                            Male
-                        </label>
-                    </div>
-                    <div class="form-check" onchange="drawFemale()" style="text-align:left;">
-                        <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonFemale" value="Female">
-                        <label class="form-check-label" for="radioButtonFemale">
-                            Female
-                        </label>
-                    </div>
+<h1>Educational Attainment by Race/Ethnicity and Gender</h1>
+
+<body>
+    <p>The following <a
+            href="https://www.census.gov/data/tables/2020/demo/educational-attainment/cps-detailed-tables.html"
+            target="_blank">data</a>
+        comes from the United States Census Bureau. They have compiled
+        multiple datasets depicting the educational attainment of those 18 years and older in the United States.
+        Learn about the disparities of educational attainment compared between race and ethnicity, as well as gender,
+        below.
+    </p>
+    <div class="float-container">
+        <div id="allraces" style="text-align:center;">
+            <div class="form-overall">
+                <div class="form-check" onchange="drawAll()" style="text-align:left;">
+                    <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonTotal" value="All"
+                        checked>
+                    <label class="form-check-label" for="radioButtonTotal">
+                        All
+                    </label>
+                </div>
+                <div class="form-check" onchange="drawMale()" style="text-align:left;">
+                    <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonMale" value="Male">
+                    <label class="form-check-label" for="radioButtonMale">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check" onchange="drawFemale()" style="text-align:left;">
+                    <input class="form-check-input" type="radio" name="radioButtons" id="radioButtonFemale"
+                        value="Female">
+                    <label class="form-check-label" for="radioButtonFemale">
+                        Female
+                    </label>
                 </div>
             </div>
         </div>
-        <h4 class="subheaders">Explanation</h4>
-        <p class="below">
-            The y-axis represents the number of graduates, while
-            the x-axis represents the level of educational attainment by grade level, and each color on the 
-            line chart depicts a race or ethnicity. On the far right side of this visualization is a filtering 
-            system for the user to choose which gender(s) to display and compare.  The user may select one gender
-            at a time via radio buttons to view the races' educational attainment by gender.  By using  
-            line charts, the user can easily view the trend of educational attainment between each group and determine 
-            which races and ethnicities achieve higher or lower education.
-        </p>
-        <h4 class="subheaders">Analysis</h4>
-        <p class="below">While viewing this overall line chart above, we can see that there are some large discrepancies. When any gender is selected,
-            the number of white graduates far surpasses the number for any other race/ethnicity. When we switch viewing between genders,
-            the number of graduates slightly lessens from male to female. As the y-axis and number of graduates change with gender, we see the overall pattern 
-            of the chart stay the same with the number of white graduates highly exceeding the number of Asian, Black, and Hispanic graduates.
-        </p>
-        <h4 class="subheaders">Educational Attainment by Race:</h4>
-        <p class="below">Note: Notice the different y-axis values on the different charts.</p>
-        <div id="mini-graphs">
-            <div id="row1">
-                <div id="asianSVG">
-                    <svg class="asian" width="550" height="350">
+    </div>
+    <h4 class="subheaders">Explanation</h4>
+    <p class="below">
+        The y-axis represents the number of graduates, while
+        the x-axis represents the level of educational attainment by grade level, and each color on the
+        line chart depicts a race or ethnicity. On the far right side of this visualization is a filtering
+        system for the user to choose which gender(s) to display and compare. The user may select one gender
+        at a time via radio buttons to view the races' educational attainment by gender. By using
+        line charts, the user can easily view the trend of educational attainment between each group and determine
+        which races and ethnicities achieve higher or lower education.
+    </p>
+    <h4 class="subheaders">Analysis</h4>
+    <p class="below">While viewing this overall line chart above, we can see that there are some large discrepancies.
+        When any gender is selected,
+        the number of white graduates far surpasses the number for any other race/ethnicity. When we switch viewing
+        between genders,
+        the number of graduates slightly lessens from male to female. As the y-axis and number of graduates change with
+        gender, we see the overall pattern
+        of the chart stay the same with the number of white graduates highly exceeding the number of Asian, Black, and
+        Hispanic graduates.
+    </p>
+    <h4 class="subheaders">Educational Attainment by Race:</h4>
+    <p class="below">Note: Notice the different y-axis values on the different charts.</p>
+    <div id="mini-graphs">
+        <div id="row1">
+            <div id="asianSVG">
+                <svg class="asian" width="550" height="350">
 
-                    </svg>
-                    <div class="form-minis" >
-                        <input type="checkbox" id="asianAll" name="asianAll" value="asian" checked=true onclick="drawAsianAll(id)">
-                        <label for="asianAll">All</label><br>
-                        <input type="checkbox" id="asianMale" name="asianMale" value="asian" onclick="drawAsianMale(id)">
-                        <label for="asianMale">Male</label><br>
-                        <input type="checkbox" id="asianFemale" name="asianFemale" value="asian" onclick="drawAsianFemale(id)">
-                        <label for="asianFemale">Female</label>
-                    </div>
-                </div>
-                <div id="blackSVG">
-                    <svg class="black" width="550" height="350">
-                        
-                    </svg>
-                    <div class="form-minis" >
-                        <input type="checkbox" id="blackAll" name="blackAll" value="black" checked=true onclick="drawBlackAll(id)">
-                        <label for="blackAll">All</label><br>
-                        <input type="checkbox" id="blackMale" name="blackMale" value="black" onclick="drawBlackMale(id)">
-                        <label for="blackMale">Male</label><br>
-                        <input type="checkbox" id="blackFemale" name="blackFemale" value="black" onclick="drawBlackFemale(id)">
-                        <label for="blackFemale">Female</label>
-                    </div>
+                </svg>
+                <div class="form-minis">
+                    <input type="checkbox" id="asianAll" name="asianAll" value="asian" checked=true
+                        onclick="drawAsianAll(id)">
+                    <label for="asianAll">All</label><br>
+                    <input type="checkbox" id="asianMale" name="asianMale" value="asian" onclick="drawAsianMale(id)">
+                    <label for="asianMale">Male</label><br>
+                    <input type="checkbox" id="asianFemale" name="asianFemale" value="asian"
+                        onclick="drawAsianFemale(id)">
+                    <label for="asianFemale">Female</label>
                 </div>
             </div>
-            <div id="row2">
-                <div id="whiteSVG">
-                    <svg class="white" width="550" height="350">
-                        
-                    </svg>
-                    <div class="form-minis" >
-                        <input type="checkbox" id="whiteAll" name="whiteAll" value="white" checked=true onclick="drawWhiteAll(id)">
-                        <label for="whiteAll">All</label><br>
-                        <input type="checkbox" id="whiteMale" name="whiteMale" value="white" onclick="drawWhiteMale(id)">
-                        <label for="whiteMale">Male</label><br>
-                        <input type="checkbox" id="whiteFemale" name="whiteFemale" value="white" onclick="drawWhiteFemale(id)">
-                        <label for="whiteFemale">Female</label>
-                    </div>
-                </div>
-                <div id="hispanicSVG">
-                    <svg class="hispanic" width="550" height="350">
-                        
-                    </svg>
-                    <div class="form-minis" >
-                        <input type="checkbox" id="hispanicAll" name="hispanicAll" value="hispanic" checked=true onclick="drawHispanicAll(id)">
-                        <label for="hispanicAll">All</label><br>
-                        <input type="checkbox" id="hispanicMale" name="hispanicMale" value="hispanic" onclick="drawHispanicMale(id)">
-                        <label for="hispanicMale">Male</label><br>
-                        <input type="checkbox" id="hispanicFemale" name="hispanicFemale" value="hispanic" onclick="drawHispanicFemale(id)">
-                        <label for="hispanicFemale">Female</label>                
-                    </div>
+            <div id="blackSVG">
+                <svg class="black" width="550" height="350">
+
+                </svg>
+                <div class="form-minis">
+                    <input type="checkbox" id="blackAll" name="blackAll" value="black" checked=true
+                        onclick="drawBlackAll(id)">
+                    <label for="blackAll">All</label><br>
+                    <input type="checkbox" id="blackMale" name="blackMale" value="black" onclick="drawBlackMale(id)">
+                    <label for="blackMale">Male</label><br>
+                    <input type="checkbox" id="blackFemale" name="blackFemale" value="black"
+                        onclick="drawBlackFemale(id)">
+                    <label for="blackFemale">Female</label>
                 </div>
             </div>
         </div>
-        <h4 class="subheaders">Explanation</h4>
-        <p class="below">
-            The y-axis continues to represent the number of graduates, and
-            the x-axis continues to represents the level of educational attainment by grade level, while each color on each 
-            line chart depicts a different gender for that chart's specific race/ethnicity. On the right 
-            side of each visualization is a filtering system for the user to choose which gender(s) to display and compare
-            within that race/ethnicity. Using the check boxes, the user may select up to all three gender categories at once.
-            These line charts help the user to view the trend of educational attainment between genders within a race/ethnicity, 
-            and see if males or females achieve higher or lower education.
-        </p>
-        <h4 class="subheaders">Analysis</h4>
-        <p class="below"> These invidual charts help us to see the see the differences between male and female rates of educational
-            attainment within the same race/ethnicity with a better lens. Here, we can see that the educational attainment rate
-            is very similar between males and females for each race. This is significant, as we can now see that there is not a 
-            large discrepancy or large gender gap between male and female rates. We now know that the problem we need to focus on
-            lies with the disparities of different rates of educational attainment between different races/ethnicities. 
-        </p>
+        <div id="row2">
+            <div id="whiteSVG">
+                <svg class="white" width="550" height="350">
 
-        <script src="https://d3js.org/d3.v4.js"></script>
-        <script src="./linegraphs.js"></script>
-    </body>
+                </svg>
+                <div class="form-minis">
+                    <input type="checkbox" id="whiteAll" name="whiteAll" value="white" checked=true
+                        onclick="drawWhiteAll(id)">
+                    <label for="whiteAll">All</label><br>
+                    <input type="checkbox" id="whiteMale" name="whiteMale" value="white" onclick="drawWhiteMale(id)">
+                    <label for="whiteMale">Male</label><br>
+                    <input type="checkbox" id="whiteFemale" name="whiteFemale" value="white"
+                        onclick="drawWhiteFemale(id)">
+                    <label for="whiteFemale">Female</label>
+                </div>
+            </div>
+            <div id="hispanicSVG">
+                <svg class="hispanic" width="550" height="350">
+
+                </svg>
+                <div class="form-minis">
+                    <input type="checkbox" id="hispanicAll" name="hispanicAll" value="hispanic" checked=true
+                        onclick="drawHispanicAll(id)">
+                    <label for="hispanicAll">All</label><br>
+                    <input type="checkbox" id="hispanicMale" name="hispanicMale" value="hispanic"
+                        onclick="drawHispanicMale(id)">
+                    <label for="hispanicMale">Male</label><br>
+                    <input type="checkbox" id="hispanicFemale" name="hispanicFemale" value="hispanic"
+                        onclick="drawHispanicFemale(id)">
+                    <label for="hispanicFemale">Female</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="subheaders">Explanation</h4>
+    <p class="below">
+        The y-axis continues to represent the number of graduates, and
+        the x-axis continues to represents the level of educational attainment by grade level, while each color on each
+        line chart depicts a different gender for that chart's specific race/ethnicity. On the right
+        side of each visualization is a filtering system for the user to choose which gender(s) to display and compare
+        within that race/ethnicity. Using the check boxes, the user may select up to all three gender categories at
+        once.
+        These line charts help the user to view the trend of educational attainment between genders within a
+        race/ethnicity,
+        and see if males or females achieve higher or lower education.
+    </p>
+    <h4 class="subheaders">Analysis</h4>
+    <p class="below"> These invidual charts help us to see the see the differences between male and female rates of
+        educational
+        attainment within the same race/ethnicity with a better lens. Here, we can see that the educational attainment
+        rate
+        is very similar between males and females for each race. This is significant, as we can now see that there is
+        not a
+        large discrepancy or large gender gap between male and female rates. We now know that the problem we need to
+        focus on
+        lies with the disparities of different rates of educational attainment between different races/ethnicities.
+    </p>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="./linegraphs.js"></script>
+</body>
+<footer>
+    <p class='footer'>
+        Created by Maria Matlick, Brendan Tran, and Alex Ramos <br> Info 474 Autumn 2021<br>
+    </p>
+</footer>
 
 </html>

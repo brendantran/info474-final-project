@@ -69,7 +69,7 @@ function drawOverall(asianData, blackData, hispanicData, whiteData, margin, widt
 
     //var yScale = d3.scaleLinear().domain([0, d3.max(whiteTotalGraduates)]).range([height, 0])
     var yScale = d3.scaleLinear().domain([0, d3.max(dataset, function (d) {
-      return +d[whiteData];
+      return +d.white;
     })]).range([height, 10])
     svg.append("g")
       .call(d3.axisLeft(yScale))
@@ -79,7 +79,7 @@ function drawOverall(asianData, blackData, hispanicData, whiteData, margin, widt
       .text("NUMBER OF GRADUATES")
       .attr("class", "y-axis-label")
       .attr("x", (-230))
-      .attr("y", -55)
+      .attr("y", -70)
       .attr("transform", "rotate(-90)")
 
     // add chart title
@@ -219,7 +219,7 @@ function createMiniGraph(csv, race, color, gender) {
       .text("NUMBER OF GRADUATES")
       .attr("class", "y-axis-label")
       .attr("x", -145)
-      .attr("y", -45)
+      .attr("y", -60)
       .attr("transform", "rotate(-90)")
       .attr("font-size", "12px")
 
